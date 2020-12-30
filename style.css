@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Jura', sans-serif;
     overflow-x: hidden;
 }
 body{
@@ -24,57 +24,88 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+.morphContainer {
+    align-items: center;
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+  }
+  .morphShape {
+    background: linear-gradient(45deg, #F7D961 0%,  #fdb731 100%);
+    animation: morph 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    height: 400px;
+    transition: all 1s ease-in-out;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .grow {
+      animation: grow 14s ease-in-out infinite;
+  }
+  @keyframes grow {
+      0% {
+            font-size: 2rem;
+      }
+      50% {
+            font-size: 2.4rem;
+      }
+      100% {
+          font-size: 2rem;
+      }
+  }
+  @keyframes morph {
+     0% {
+              border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+              background: linear-gradient(45deg, #F7D961 0%,  #fdb731 100%);
+      } 
+      
+      50% {
+              border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+              background: linear-gradient(45deg, #ead57f 0%,  #fdb731 100%);
+      }
+    
+      100% {
+          border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+          background: linear-gradient(45deg, #F7D961 0%,  #fdb731 100%);
+      } 
+  }
+.morphContainer:hover .morphShape{
+    background: linear-gradient(45deg, #bb61f7 0%,  #bf7fea 100%);
+    animation: morph2 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    height: 400px;
+    transition: all 1s ease-in-out;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes morph2 {
+    0% {
+              border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+              background: linear-gradient(45deg, #bb61f7 0%,  #bf7fea 100%);
+      } 
+      
+      50% {
+              border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+              background: linear-gradient(45deg, #be70f1 0%,  #bf7fea 100%);
+      }
+    
+      100% {
+          border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+          background: linear-gradient(45deg, #bb61f7 0%,  #bf7fea 100%);
+      } 
+  }
 .nameLogo{
     width: 100%;
     padding-left: 10px;
-}
-/* SVG styling */
-.svgTitle {
-    display: block;
-    font: 2.5em 'Nunito';
-    width: 100%;
-    height: auto;
-    /* max-height: 200px; */
-    /* margin: 0 0; */
-    
-}
-
-.text-copy {
-    fill: none;
-    /* stroke: white; */
-    stroke-dasharray: 6% 29%;
-    stroke-width: 2px;
-    stroke-dashoffset: 0%;
-    animation: stroke-offset 5.5s infinite linear;
-}
-
-.text-copy:nth-child(1){
-	stroke: #ded09a;
-	animation-delay: -1;
-}
-
-.text-copy:nth-child(2){
-	stroke: #d1cab0;
-	animation-delay: -2s;
-}
-
-.text-copy:nth-child(3){
-	stroke: #ead57f;
-	animation-delay: -3s;
-}
-
-.text-copy:nth-child(4){
-	stroke: #F7D961;
-	animation-delay: -4s;
-}
-
-.text-copy:nth-child(5){
-	stroke: #fdb731;
-	animation-delay: -5s;
-}
-
-@keyframes stroke-offset{
-	100% {stroke-dashoffset: -35%;}
 }
 .nav {
     padding: 10px;
@@ -83,14 +114,21 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.nav img {
-    width: 15%;
+.nav a {
+    width: 10%;
+}
+.nav a svg {
+    width: 100%;
+    height: auto;
+    fill: #F7D961;
     
 }
+
+
 .header-image{
     width: 50%;
 }
-.top-img {
+.top-vid {
     width: 90%;
     height: auto;
     border-radius: 2%;
