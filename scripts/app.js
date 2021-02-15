@@ -1,28 +1,28 @@
 const mouseCursor = document.querySelector('.cursor');
 const mouseSVG = document.querySelector('.mouseSVG')
 
-let rotater = 1
+// let rotater = 1
 
-const cursor = (e) => {
-    mouseCursor.style.top = e.pageY + "px";
-    mouseCursor.style.left = e.pageX + "px";
-}
+// const cursor = (e) => {
+//     mouseCursor.style.top = e.pageY + "px";
+//     mouseCursor.style.left = e.pageX + "px";
+// }
 
-window.setInterval(
-    function () {
-        rotater = rotater + 2;
-        mouseCursor.style.transform = `rotate(${(rotater)}deg)`;
-    }, 100);
+// window.setInterval(
+//     function () {
+//         rotater = rotater + 2;
+//         mouseCursor.style.transform = `rotate(${(rotater)}deg)`;
+//     }, 100);
 
-window.addEventListener("mousemove", cursor)
+// window.addEventListener("mousemove", cursor)
 
-window.addEventListener("mousedown", () => {
-    mouseCursor.classList.add("mouse-down")
-})
+// window.addEventListener("mousedown", () => {
+//     mouseCursor.classList.add("mouse-down")
+// })
 
-window.addEventListener("mouseup", () => {
-    mouseCursor.classList.remove("mouse-down")
-})
+// window.addEventListener("mouseup", () => {
+//     mouseCursor.classList.remove("mouse-down")
+// })
 
 let slideIndex = 0;
 showSlides();
